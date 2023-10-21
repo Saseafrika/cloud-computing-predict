@@ -18,6 +18,7 @@
 import boto3    # Python AWS SDK
 import json     # Used for handling API-based data.
 import base64   # Needed to decode the incoming POST data
+import random
 
 def lambda_handler(event, context):
     
@@ -44,14 +45,14 @@ def lambda_handler(event, context):
     # -----------------------------
     
     # Instantiate the table. Remember pass the name of the DynamoDB table created in step 4
-    table = dynamodb.Table('# Insert the name of your generated DynamoDB table here')
+    table = dynamodb.Table('portfolio-mail-table')
     
     # ** Write the responses to the table using the put_item method. **
 
     # Complete the below code so that the appropriate 
     # incoming data is sent to the matching column in your DynamoDB table
     # --- Insert your code here ---
-    db_response = table.put_item(Item={'ResponsesID': None, # <--- Insert the correct variable
+    db_response = table.put_item(Item={'ResponsesID': rid, # <--- Insert the correct variable
                         'Name': None, # <--- Insert the correct variable
                         'Email': None, # <--- Insert the correct variable
                         'Cell': None, # <--- Insert the correct variable

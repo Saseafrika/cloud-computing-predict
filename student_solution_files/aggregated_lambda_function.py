@@ -28,12 +28,12 @@ import numpy as np # Array manipulation
 
 # ** Insert sentiment extraction function **
 # --- Insert your code here ---
- 
+
 # -----------------------------
 
 # ** Insert email responses function **
 # --- Insert your code here ---
- 
+    
 # -----------------------------
 
 # Lambda function orchestrating the entire predict logic
