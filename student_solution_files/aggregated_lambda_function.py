@@ -19,6 +19,7 @@ import boto3    # Python AWS SDK
 import json     # Used for handling API-based data.
 import base64   # Needed to decode the incoming POST data
 import numpy as np # Array manipulation
+import random
 # <<< You will need to add additional libraries to complete this script >>> 
 
 # ** Insert key phrases function **
@@ -48,10 +49,26 @@ def lambda_handler(event, context):
     # <<< Ensure that the DynamoDB write response object is saved 
     #    as the variable `db_response` >>> 
     # --- Insert your code here ---
-
+    # --- Insert your code here ---
+    rid = random.randint(1,1000000000) # <--- Replace this value with your code.
+    # -----------------------------
+    
+    # ** Instantiate the DynamoDB service with the help of the boto3 library **
+    
+    # --- Insert your code here ---
+    dynamodb = boto3.resource('dynamodb') # <--- Replace this value with your code.
+    # -----------------------------
+    
+    # Instantiate the table. Remember pass the name of the DynamoDB table created in step 4
+    table = dynamodb.Table('portfolio-mail-table')
 
     # Do not change the name of this variable
-    db_response = None
+    db_response = table.put_item(Item={'ResponsesID': rid, # <--- Insert the correct variable
+                        'Name': dec_dict['name'], # <--- Insert the correct variable
+                        'Email': dec_dict['email'], # <--- Insert the correct variable
+                        'Cell': dec_dict['cell'], # <--- Insert the correct variable
+                        'Message': dec_dict['message'] # <--- Insert the correct variable
+    })
     # -----------------------------
     
 
