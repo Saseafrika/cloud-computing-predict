@@ -64,10 +64,10 @@ def lambda_handler(event, context):
 
     # Do not change the name of this variable
     db_response = table.put_item(Item={'ResponsesID': rid, # <--- Insert the correct variable
-                        'Name': dec_dict['name'], # <--- Insert the correct variable
-                        'Email': dec_dict['email'], # <--- Insert the correct variable
-                        'Cell': dec_dict['cell'], # <--- Insert the correct variable
-                        'Message': dec_dict['message'] # <--- Insert the correct variable
+                        'Name': dec_dict['Name'], # <--- Insert the correct variable
+                        'Email': dec_dict['Email'], # <--- Insert the correct variable
+                        'Cell': dec_dict['Cell'], # <--- Insert the correct variable
+                        'Message': dec_dict['Message'] # <--- Insert the correct variable
     })
     # -----------------------------
     
