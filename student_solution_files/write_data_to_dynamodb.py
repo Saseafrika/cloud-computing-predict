@@ -55,7 +55,7 @@ def lambda_handler(event, context):
     db_response = table.put_item(Item={'ResponsesID': rid, # <--- Insert the correct variable
                         'Name': dec_dict['name'], # <--- Insert the correct variable
                         'Email': dec_dict['email'], # <--- Insert the correct variable
-                        'Cell': dec_dict['cell'], # <--- Insert the correct variable
+                        'Cell': dec_dict['phone'], # <--- Insert the correct variable
                         'Message': dec_dict['message'] # <--- Insert the correct variable
     })
     # -----------------------------
